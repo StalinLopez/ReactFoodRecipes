@@ -10,7 +10,11 @@ export default function RootLayout() {
     }
 
     if(isSignedIn) {
+<<<<<<< HEAD
             return <Redirect href="/(tabs)" />
+=======
+            return <Redirect href="/" />
+>>>>>>> 721f65e7a537f1b203fe85ddd676e797804497e2
     }
 
     return <Stack screenOptions={{headerShown:false}} />;
