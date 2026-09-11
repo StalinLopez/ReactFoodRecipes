@@ -1,5 +1,3 @@
-
-<<<<<<< HEAD
 import { fetchAddToFavourites, fetchAllRecipes } from "@/services/recipe.services";
 import { IAddToFavourite, IRecipe } from "@/types/recipes.types";
 import { useUser } from "@clerk/expo"
@@ -27,7 +25,7 @@ const SearchScreen = () => {
      if (!user) return;
      try{
      await fetchAddToFavourites({userId:user.id,...recipe});
-     alert("Recipe added to favourites successfully!");
+     alert
      }catch(error){
 console.error("Error adding recipe to favourites", error);
      }
@@ -92,17 +90,6 @@ useEffect(() => {
     ) }
 </View>
         </ScrollView>
-=======
-import {View ,Text} from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
-
-const SearchScreen = () => {
-    return (
-        <SafeAreaView>
-        <View>
-        <Text>SearchScreen</Text>
-        </View>
->>>>>>> 721f65e7a537f1b203fe85ddd676e797804497e2
         </SafeAreaView>
     )
 }

@@ -8,10 +8,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign} from "@react-native-vector-icons/ant-design";
 import { router } from 'expo-router';
 import RecipeCard from '@/components/RecipeCard';
-<<<<<<< HEAD
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-=======
->>>>>>> 721f65e7a537f1b203fe85ddd676e797804497e2
+
 const HomeScreen = () => {
 
     const [allRecipes,setAllRecipes] = useState<IRecipe[]>([]);
@@ -21,11 +19,8 @@ const HomeScreen = () => {
     setAllRecipes(response?.allRecipes || []);
     };
     const handleNavigation = (id:String)=>{
-<<<<<<< HEAD
+
         router.push(`/detail/${id}`);
-=======
-        router.push(`/details/${id}`);
->>>>>>> 721f65e7a537f1b203fe85ddd676e797804497e2
 
     }
     useEffect(()=>{
@@ -146,7 +141,7 @@ const HomeScreen = () => {
                     ? recipe.shortDescription.slice(0.30) + "..." : recipe.shortDescription}
                  </Text>
 
-<<<<<<< HEAD
+
                   <View className="flex flex-row gap-3 mt-2">
                    <View
                    className="flex flex-row gap-1">
@@ -176,9 +171,7 @@ const HomeScreen = () => {
 
 
 
-                  
-=======
->>>>>>> 721f65e7a537f1b203fe85ddd676e797804497e2
+
                  </View>
                     </Pressable>
                 )

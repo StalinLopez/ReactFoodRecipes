@@ -43,7 +43,7 @@ const fetchUserFavouritesRecipes = async(userId: String) =>{
     try{
 const url=`${BASE_URL}/favourites/${userId}`;
 const response = await fetch(url);
-const data = response.json();
+const data = await response.json();
 const parseData = await convertKeysToCamelCase(data);
 return parseData;
     }catch(error){
@@ -73,4 +73,20 @@ const fetchRecipesDetails = async(recipeId: String) => {
         console.log("error while fetching recipe details", error);
     }
 };
-export {fetchAllRecipes,fetchAddToFavourites,fetchUserFavouritesRecipes,fetchRecipesDetails};
+
+const fetchDeleteFavourites = async (userId: string, recipeId: number) => {
+  try {
+    const url = `${BASE_URL}/delete-favourites/${userId}/${Number(recipeId)}`;
+    const response = await fetch(url, {
+      method: "DELETE",
+    });
+
+    const data = await response.json();
+    const parsedData = convertKeysToCamelCase(data);
+    return parsedData;
+  } catch (error) {
+    console.log("Error while fetching deleting recipe", error);
+  }
+};
+
+export {fetchAllRecipes,fetchAddToFavourites,fetchUserFavouritesRecipes,fetchRecipesDetails,fetchDeleteFavourites};

@@ -1,14 +1,10 @@
+import { UserProfileView } from "@clerk/expo/native";
 
-import {View ,Text} from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
-
-const ProfileScreen = () => {
-    return (
-        <SafeAreaView>
-        <View>
-        <Text>ProfileScreen</Text>
-        </View>
-        </SafeAreaView>
-    )
+export default function ProfileScreen() {
+  return (
+    <UserProfileView
+      isDismissible={false}
+      style={{ flex: 1 }}
+    />
+  );
 }
-export default ProfileScreen
